@@ -1,0 +1,164 @@
+html,body {
+background-color: lightblue;
+	background-size: 100%;
+}
+
+#commentPost
+{
+	font-size: 20;
+}
+
+#temp_post
+{
+	border-radius:20px;
+	border-style: solid;
+    border-color: #ff0000 #0000ff;
+    background-color: red;
+}
+
+div.post
+{
+	background-color: white;
+}
+
+#dateAndVote
+{
+	height: 15px;
+	background-color: white;
+	margin:0px;
+	padding: 0px;
+}
+
+#dateAndVote2
+{
+	height: 20px;
+	background-color: white;
+	margin:0px;
+	padding: 0px;
+	border-left: thick solid #ff0000;
+
+}
+
+input.comment_data
+{
+
+	background-color:cyan;
+	margin-left: 10px;
+
+}
+
+#namePerson
+{
+	margin-right: 10px
+	background-color: red;
+	
+}
+
+div.comment
+{
+	background-color: white;
+	position:relative;
+	left:30px;
+	
+
+}
+
+label.date
+{
+	margin-left: 5px;
+}
+
+
+
+#upvote
+{
+	display: inline;
+	float: right;
+	margin-right: 10px;
+
+}
+
+#downvote
+{
+	display: inline;
+	float: right;
+	margin-right: 20px;
+}
+
+
+
+#upvote2
+{
+	display: inline;
+	float: right;
+	margin-right: 10px;
+
+}
+
+#downvote2
+{
+	display: inline;
+	float: right;
+	margin-right: 20px;
+}
+
+
+
+
+#container
+{
+	width:820px;
+height : 180px;
+margin-left: auto;
+margin-right: auto;
+background-color : white;
+padding-top :20px;
+
+padding-bottom : 10px;
+padding-left : 10px;
+}
+
+#post_data
+{
+	height : 100px; 
+	width : 800px;
+}
+
+#newpost
+{
+	margin-top :20px;
+	float:right;
+	margin-right: 10px;
+}
+
+#middlee
+{
+	background-color: white;
+	margin-top: 10px;
+	width:820px;
+	margin-left: auto;
+	margin-right: auto;
+	visibility: hidden;
+}
+
+#regonAboveTheLineBreak
+{
+	background-color: #B5BBBD;
+	font-size: 25;
+	
+
+}
+
+
+
+#namePerson
+{
+	
+	
+
+}
+
+#lineBreak
+{
+	background-color: 2px solid blue;
+}

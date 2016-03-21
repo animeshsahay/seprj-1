@@ -1,0 +1,127 @@
+<html>
+	<head>
+			<title>Discussion Forum</title>
+			<link rel="stylesheet" href=".\css\bootstrap.css">
+			<link rel="stylesheet" href=".\discussion_forum.css">
+
+	</head>
+	
+	<script>
+		// name, date-time, upvotes=number of upvotes, list of ppl who upvoted, seenBy-number of upvotes, ppl who have seen it, comment:[(person,post)]
+	function init(){
+		count=0;
+		up = 0;
+		dn = 0;
+		template = document.getElementById("temp_post");     //span
+		template1 = document.getElementById("temp_comment");     //span
+		d_post=document.getElementById("post_data");        //input text box
+
+	}
+	 
+	function newPost(){
+	//	var name = getName();                     // queries database
+		var datetime = getdate();
+		var x=template.cloneNode(true);
+		var zz = document.getElementById("middlee");
+		zz.style.visibility = 'visible';
+		x.style.display='block';
+		x.id=''+count;
+		count+=1;
+		x.childNodes[1].innerText=d_post.value;       //0th one is the new line text element..!!
+		x.getElementsByClassName('date')[0].innerText = datetime;
+
+		zz.appendChild(x);
+	}
+	function add_comment()
+	{
+	//	var name = getName();                     // queries database
+		var xyz=template1.cloneNode(true);
+		xyz.id=count;count+=1;
+		xyz.style.display='block';
+		var datetime = getdate();
+		var q=event.currentTarget;
+		var p=q.parentNode;
+		var x = q.previousSibling;  // textbox
+		while(x.className!='comment_data')
+			x=x.previousSibling;
+		
+		xyz.getElementsByClassName('post')[0].innerText=x.value;
+		xyz.getElementsByClassName('date')[0].innerText = datetime;
+		p.insertBefore(xyz,x);
+		if(p.className=='comment'){
+			xyz.removeChild(xyz.getElementsByClassName('comment_data')[0]);
+			xyz.removeChild(xyz.getElementsByClassName('comment_button')[0]);
+		}
+		
+		
+		
+	}
+
+	function getdate(){
+		var currentdate = new Date();
+		var datetime = currentdate.getDay() + "/"+currentdate.getMonth() 
+		+ "/" + currentdate.getFullYear() + " @ " 
+		+ currentdate.getHours() + ":" 
+		+ currentdate.getMinutes() + ":" + currentdate.getSeconds();
+		return datetime;
+	}
+
+	function upvote(){
+		up += 1;
+	//	var name = getName();
+
+	}
+	</script>
+	<body id="b1" onload="init()">
+		
+		<div id="container">
+		<header>
+			<textarea name="Text1" cols="40" rows="5" id='post_data'> </textarea>
+			<input class='btn btn-warning' type='button' id='newpost' value='New Post' onclick='newPost();'/>
+		</header>
+		</div>
+		
+		<div id="middlee">
+		<header>
+		<div class='mainpost' id="temp_post" style='display:none'>
+			
+			<div class='post' id="regonAboveTheLineBreak"> </div><!--contains the text -->
+			<div id="namePerson" class='post'> <h2>acharaya (USER)</h2></div>
+			<div class='post' id="regonAboveTheLineBreak"> </div><!--contains the text -->
+			<hr>
+			<div id='dateAndVote'>
+			<label class='date' ></label>
+			<!-- make sure anything u add is in this region only-->
+
+			<button  id='upvote' onclick='upvote()' class='btn btn-info up'>Upvote</button>
+			<button  id='downvote' onclick='downvote()' class='btn btn-info down'>Downvote</button>
+
+
+		<!--<input type="image" src="./up.png" width="30px" height="30px" align=bottom name="up" onclick="upvote()"/>
+			<input type="image" src="./down.png" width="20px" height="20px" align=bottom name="dn" onclick="downvote()"/>
+		--> </div>
+			<hr>
+			<input type='text' class='comment_data'/><!--textbox for new comment-->
+			<button class='comment_button' onclick='add_comment()'>Comment</button>
+			
+		</div>
+		
+		<div class='comment' id='temp_comment' style='display:none'>
+
+			<div class='bg-success post' id='commentPost'></div>
+			<div id='dateAndVote2'>
+			<label class='date'></label>
+			<button  onclick='upvote()' id='upvote2' class='btn btn-info up'>Upvote</button>
+			<button  onclick='downvote()' id='downvote2' class='btn btn-info down'>Downvote</button>
+			</div>			
+			<hr>
+			<input type='text' class='comment_data'/><!--textbox for new comment-->
+			<button class='comment_button' onclick='add_comment()'>Comment</button>
+			<hr>
+		
+		</div>
+		</header>
+		</div>
+	
+	</body>
+</html>

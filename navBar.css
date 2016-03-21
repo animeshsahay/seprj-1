@@ -1,0 +1,134 @@
+#nav
+{
+	background-color: #ff0000;
+	height:10%;
+	width: 100%; 
+	text-align: center;
+	padding-bottom: 0px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+}
+
+iframe {
+   /display: block;
+    background: #000;
+    border: none;
+    height: 90%; 
+    width: 100%;
+}
+
+button[class^=iterateEffects]
+{
+	border: none;
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+	/margin: 10px 0 20px;
+	padding: 0px 20px;
+	line-height: 50px;
+	height: 100%;
+	letter-spacing: 1px;
+	width: 15%;
+	cursor: pointer;
+	//display: block;
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	box-shadow: 0 3px 0 rgba(0,0,0,0.1);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	/margin-top: 10px;
+	color: white;
+	font-size: 20;
+	/margin-right: 20px;
+	/margin-left: 20px;
+	
+}
+
+button[class^=iterateEffects]:hover
+{
+	
+	color: 	 #ffcccc;
+
+}
+/*#cg
+{
+	margin-top: 20px;
+
+	margin-left: 20px;
+	color: white;
+	font-size: 25;
+	margin-right: 20px;
+
+}
+
+#cg:hover
+{
+	
+	
+	color: 	 #ffcccc;
+
+}
+
+#rg 
+{
+	margin-top: 20px;
+
+	color: white;
+	font-size: 25;
+	margin-right: 20px;
+	margin-left: 20px;
+
+}
+
+#rg:hover
+{
+	
+	color: 	 #ffcccc;
+	
+}
+
+#con
+{
+	margin-top: 20px;
+	margin-top:5px;
+	color: white;
+	font-size: 25;
+	margin-right: 20px;
+	margin-left: 20px;
+
+}
+
+#con:hover
+{
+	
+	color: 	 #ffcccc;
+	
+}
+
+#df
+{
+	margin-top: 20px;
+	position: relative;
+	margin-right: 5px;
+	color: white;
+	margin-left: 20px;
+	font-size: 25;
+	text-align: center;
+
+}
+
+#df:hover
+{
+	color: 	 #ffcccc;
+	background-color: black;
+	margin-top: 20px;
+
+}*/
+
+
+
