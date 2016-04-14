@@ -1,0 +1,6 @@
+Profile page:-
+Name 
+USN 
+Dept.
+user-name
+password

@@ -14,8 +14,9 @@
 		dn = 0;
 		template = document.getElementById("temp_post");     //span
 		template1 = document.getElementById("temp_comment");     //span
+		//comment = document.getElementById("comment");        //button
 		d_post=document.getElementById("post_data");        //input text box
-
+		//comment.addEventListener("click",newPost,false);	
 	}
 	 
 	function newPost(){
@@ -27,7 +28,9 @@
 		x.style.display='block';
 		x.id=''+count;
 		count+=1;
+	//	x.childNodes[1].innerText += name;
 		x.childNodes[1].innerText=d_post.value;       //0th one is the new line text element..!!
+
 		x.getElementsByClassName('date')[0].innerText = datetime;
 
 		zz.appendChild(x);
@@ -77,6 +80,17 @@
 		<div id="container">
 		<header>
 			<textarea name="Text1" cols="40" rows="5" id='post_data'> </textarea>
+			<nav id="nav">
+				<ul id="navigation">
+					<li><a href="#">Upload</a>
+						<ul>
+							<li><label>Image<input class="btn btn-warning" type='file' id='image' accept="image/*"/></label></li>
+							<li><label>Course Material<input class="btn btn-warning" type='file' id='documents' accept=".pdf"/></label></li>
+							<li><label>Assignments<input class="btn btn-warning" type='file' id='assignments' /></label></li>
+						</ul>
+	                </li>                 
+	             </ul>
+			</nav>
 			<input class='btn btn-warning' type='button' id='newpost' value='New Post' onclick='newPost();'/>
 		</header>
 		</div>

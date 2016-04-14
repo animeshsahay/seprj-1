@@ -3,8 +3,33 @@
     include the remember me checkbox
     -->
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="/home/animesh/Documents/6thsem/bootstrap/first.css" >
-
+	<title>Login-PESNET</title>
+<link rel="shortcut icon" type="image/ico" href="./PESNET-05.png"/>
+<link rel="stylesheet" href=".\first.css">
+<script>
+	function create_json(){
+	console.log("here");
+	/*you had missed value*/
+		var user = document.getElementById('inputEmail').value;
+		var pass = document.getElementById('inputPassword').value;
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", "http://127.0.0.1:8000/login",false);
+		//xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+		/*above line unnecessary*/
+		var j = {
+            "uName":user,
+            "password":pass,
+        };
+		xhr.send(JSON.stringify(j));
+		/*this is how u receive response*/
+		xhr.onreadystatechange=function(){
+									console.log(xhr.responseText);
+									if(xhr.readyState==4 && xhr.status==200){
+											console.log(xhr.responseText);
+										}
+								};
+	}
+</script>
 <!-- Optional theme 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">-->
 
@@ -13,7 +38,7 @@
     <div class="container">
         <div class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <img id="profile-img" class="profile-img-card" src="./PESNET-05.png" />
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
@@ -24,7 +49,8 @@
                         <input type="checkbox" value="remember-me"> Remember me
                     </label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" onclick="create_json()">Sign In</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signup" >Sign Up</button>
             </form><!-- /form -->
             <a href="#" class="forgot-password">
                 Forgot the password?
